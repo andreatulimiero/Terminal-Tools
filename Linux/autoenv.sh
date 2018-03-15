@@ -1,6 +1,6 @@
 cd () {
 	if [ -f env/bin/activate ] && [ "$1" == ".." ] ; then
-		source ~/.bashrc
+		deactivate
 	fi
 	builtin cd "$@"
 	if [ -f env/bin/activate ] ; then
