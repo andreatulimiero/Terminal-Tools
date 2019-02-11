@@ -1,0 +1,75 @@
+" Indentation {{{
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+" }}}
+
+" Line appearance {{{
+set number
+set showbreak=\|-->
+set breakindent
+" }}}
+
+"Folding {{{
+"set foldlevel=0
+set foldmethod=marker
+" }}}
+
+" Search and Autocomplete {{{
+set wildmenu
+set incsearch
+" }}}
+
+" Autoreload {{{
+autocmd! bufwritepost .vimrc source %
+" }}}
+
+"Windows {{{
+""Moving {{{
+nnoremap h <C-W><C-H>
+nnoremap j <C-W><C-J>
+nnoremap k <C-W><C-K>
+nnoremap l <C-W><C-L>
+""}}}
+"" Resizing {{{
+nnoremap H :vertical resize +5<CR>
+nnoremap J :resize -5<CR>
+nnoremap K :resize +5<CR>
+nnoremap L :vertical resize -5<CR>
+"" }}}
+"}}}
+
+"Initial setup {{{
+if empty(glob('~/.vim/autoload/plug.vim'))
+silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+" }}}
+
+" Plugins {{{
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+"Plug 'xuhdev/vim-latex-live-preview'
+Plug 'itchyny/lightline.vim'
+Plug 'altercation/vim-colors-solarized'
+call plug#end()
+" }}}
+
+"Nerdtree {{{
+map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
+" }}}
+
+"Lightline {{{
+set laststatus=2
+"}}}
+
+"Solarized {{{
+let g:solarized_termcolors=256
+syntax enable
+colorscheme solarized
+set background=dark
+" }}}
