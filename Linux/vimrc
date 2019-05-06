@@ -84,6 +84,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 "Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'majutsushi/tagbar'
+Plug 'posva/vim-vue'
 call plug#end()
 
 " Nerdtree {{{
